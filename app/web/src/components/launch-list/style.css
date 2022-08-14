@@ -1,0 +1,31 @@
+.list-card{
+    flex: 1 1 640px;
+    box-shadow: 2px 2px 3px #00000055, 4px 4px 8px #00000022;
+    border-radius: .25rem;
+    display: flex;
+    flex-direction: column;
+}
+.list-card .card-header{
+    font-size: larger;
+    padding: 1rem;
+    margin: 0;
+}
+
+.list-card .list{
+    height: 300px;
+    overflow: auto;
+}
+.list-card .list-item{
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem;
+    gap: 1rem;
+    text-decoration: none;
+    color: #000;
+    transition: all 100ms;
+}
+
+.list-card .list-item:hover,
+.list-card .list-item:focus{
+    background-color: #D4F1F4;
+}

@@ -1,0 +1,24 @@
+.launch-page{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+iframe{
+    border-radius: .5rem;
+}
+.back-btn{
+    background-color: hsl(198, 90%, 19%);
+    color: #fff;
+    text-decoration: none;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: .5rem;
+    transition: all 100ms;
+}
+
+.back-btn:hover,
+.back-btn:focus{
+    background-color: hsl(198, 90%, 29%);
+}

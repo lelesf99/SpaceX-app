@@ -1,0 +1,11 @@
+.title{
+    text-align: center;
+}
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    max-width: 1368px;
+    padding: 2rem 2rem;
+    gap: 2rem;
+}
