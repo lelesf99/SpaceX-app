@@ -15,7 +15,7 @@ export default function LaunchPage() {
         setLaunch(value);
       })
     );
-  }, []);
+  }, [id]);
 
   return (
     <div className="launch-page">

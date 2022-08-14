@@ -83,21 +83,25 @@ export default function Home() {
           launch={latest}
           header="Último Lançamento"
           loading={latestLoading}
+          error={latestError}
         ></LaunchCard>
         <LaunchCard
           launch={next}
           header="Próximo Lançamento"
           loading={nextLoading}
+          error={nextError}
         ></LaunchCard>
         <LaunchList
           list={upcoming}
           header="Próximos Lançamentos"
           loading={upcomingLoading}
+          error={upcomingError}
         ></LaunchList>
         <LaunchList
           list={past}
           header="Últimos Lançamentos"
           loading={pastLoading}
+          error={pastError}
         ></LaunchList>
       </div>
     </div>
