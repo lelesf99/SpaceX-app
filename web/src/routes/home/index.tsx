@@ -1,4 +1,3 @@
-import React from "react";
 import { useEffect, useState } from "react";
 import LaunchCard from "../../components/launch-card";
 import LaunchList from "../../components/launch-list";
@@ -25,8 +24,7 @@ export default function Home() {
     setNextLoading(true);
     setUpcomingLoading(true);
     setPastLoading(true);
-
-    fetch("http://localhost:3001/latest")
+    fetch("https://leles-spacex-app.herokuapp.com/latest")
       .then((res) => res.json())
       .then(
         (result) => {
@@ -38,7 +36,7 @@ export default function Home() {
           setLatestError(error);
         }
       );
-    fetch("http://localhost:3001/next")
+    fetch("https://leles-spacex-app.herokuapp.com/next")
       .then((res) => res.json())
       .then(
         (result) => {
@@ -50,7 +48,7 @@ export default function Home() {
           setNextError(error);
         }
       );
-    fetch("http://localhost:3001/upcoming")
+    fetch("https://leles-spacex-app.herokuapp.com/upcoming")
       .then((res) => res.json())
       .then(
         (result) => {
@@ -62,7 +60,7 @@ export default function Home() {
           setUpcomingError(error);
         }
       );
-    fetch("http://localhost:3001/past")
+    fetch("https://leles-spacex-app.herokuapp.com/past")
       .then((res) => res.json())
       .then(
         (result) => {

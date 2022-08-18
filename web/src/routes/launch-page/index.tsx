@@ -9,7 +9,7 @@ export default function LaunchPage() {
   const [launch, setLaunch] = useState<any>();
   
   useEffect(() => {
-    fetch(`https://api.spacexdata.com/v5/launches/${id}`).then((res) =>
+    fetch(`https://leles-spacex-app.herokuapp.com/launches/${id}`).then((res) =>
       res.json().then((value) => {
         setLaunch(value);
       })
