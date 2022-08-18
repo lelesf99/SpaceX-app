@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import LaunchCard from "../../components/launch-card";
 import LaunchList from "../../components/launch-list";
 import Launch from "../../models/Launch";
 import "./style.css";
-export default function Home() {
+
+const Home:FC = () => {
   const [latestLoading, setLatestLoading] = useState(false);
   const [nextLoading, setNextLoading] = useState(false);
   const [upcomingLoading, setUpcomingLoading] = useState(false);
@@ -16,8 +17,8 @@ export default function Home() {
 
   const [latest, setLatest] = useState<Launch>();
   const [next, setNext] = useState<Launch>();
-  const [upcoming, setUpcoming] = useState<Launch>();
-  const [past, setPast] = useState<Launch>();
+  const [upcoming, setUpcoming] = useState<Launch[]>();
+  const [past, setPast] = useState<Launch[]>();
 
   useEffect(() => {
     setLatestLoading(true);
@@ -90,13 +91,13 @@ export default function Home() {
           error={nextError}
         ></LaunchCard>
         <LaunchList
-          list={upcoming}
+          launchlist={upcoming}
           header="Próximos Lançamentos"
           loading={upcomingLoading}
           error={upcomingError}
         ></LaunchList>
         <LaunchList
-          list={past}
+          launchlist={past}
           header="Últimos Lançamentos"
           loading={pastLoading}
           error={pastError}
@@ -105,3 +106,4 @@ export default function Home() {
     </div>
   );
 }
+export default Home;

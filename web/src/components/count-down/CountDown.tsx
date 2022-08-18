@@ -1,12 +1,16 @@
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import './style.css';
 
-export default function CountDown(props: any) {
+interface CountDownProps{
+  then?: Date;
+}
+
+const CountDown:FC<CountDownProps> = (props) => {
   const [counter, setCounter] = useState<string[]>([""]);
 
   useEffect(() => {
     let interval = setInterval(() => {
-      const then = new Date(props?.then).getTime();
+      const then = props.then ? new Date(props.then).getTime() : 0;
       const now = new Date().getTime();
 
       const delta = then - now;
@@ -37,3 +41,4 @@ export default function CountDown(props: any) {
     </div>
   );
 }
+export default CountDown;
