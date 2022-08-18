@@ -21,40 +21,64 @@ const launchMapper = (apiResLaunch: any): Launch => {
 
 const getLaunch = async (req: Request, res: Response, next: NextFunction) => {
     const id: string = req.params.id;
-    let result: AxiosResponse = await axios.get(`https://api.spacexdata.com/v5/launches/${id}`);
-    const resMap = launchMapper(result.data);
-    return res.status(result.status).json(resMap);
+    try {
+        let result: AxiosResponse = await axios.get(`https://api.spacexdata.com/v5/launches/${id}`);
+        const resMap = launchMapper(result.data);
+        return res.status(result.status).json(resMap);
+    } catch (error) {
+        return res.status(500).json(error);
+    }
 }
 
 const getAllLaunches = async (req: Request, res: Response, next: NextFunction) => {
-    let result: AxiosResponse = await axios.get('https://api.spacexdata.com/v5/launches');
-    const resMap = result.data.map((launch: any) => launchMapper(launch))
-    return res.status(result.status).json(resMap);
+    try {
+        let result: AxiosResponse = await axios.get('https://api.spacexdata.com/v5/launches');
+        const resMap = result.data.map((launch: any) => launchMapper(launch))
+        return res.status(result.status).json(resMap);
+    } catch (error) {
+        return res.status(500).json(error);
+    }
 }
 
 
 const getLatestLaunch = async (req: Request, res: Response, next: NextFunction) => {
-    let result: AxiosResponse = await axios.get('https://api.spacexdata.com/v5/launches/latest');
-    const resMap = launchMapper(result.data);
-    return res.status(result.status).json(resMap);
+    try {
+        let result: AxiosResponse = await axios.get('https://api.spacexdata.com/v5/launches/latest');
+        const resMap = launchMapper(result.data);
+        return res.status(result.status).json(resMap);
+    } catch (error) {
+        return res.status(500).json(error);
+    }
 }
 
 const getNextLaunch = async (req: Request, res: Response, next: NextFunction) => {
-    let result: AxiosResponse = await axios.get('https://api.spacexdata.com/v5/launches/next');
-    const resMap = launchMapper(result.data);
-    return res.status(result.status).json(resMap);
+    try {
+        let result: AxiosResponse = await axios.get('https://api.spacexdata.com/v5/launches/next');
+        const resMap = launchMapper(result.data);
+        return res.status(result.status).json(resMap);
+    } catch (error) {
+        return res.status(500).json(error);
+    }
 }
 
 const getUpcomigLaunches = async (req: Request, res: Response, next: NextFunction) => {
-    let result: AxiosResponse = await axios.get('https://api.spacexdata.com/v5/launches/upcoming');
-    const resMap = result.data.map((launch: any) => launchMapper(launch))
-    return res.status(result.status).json(resMap);
+    try {
+        let result: AxiosResponse = await axios.get('https://api.spacexdata.com/v5/launches/upcoming');
+        const resMap = result.data.map((launch: any) => launchMapper(launch))
+        return res.status(result.status).json(resMap);
+    } catch (error) {
+        return res.status(500).json(error);
+    }
 }
 
 const getPastLaunches = async (req: Request, res: Response, next: NextFunction) => {
-    let result: AxiosResponse = await axios.get('https://api.spacexdata.com/v5/launches/past');
-    const resMap = result.data.map((launch: any) => launchMapper(launch))
-    return res.status(result.status).json(resMap);
+    try {
+        let result: AxiosResponse = await axios.get('https://api.spacexdata.com/v5/launches/past');
+        const resMap = result.data.map((launch: any) => launchMapper(launch))
+        return res.status(result.status).json(resMap);
+    } catch (error) {
+        return res.status(500).json(error);
+    }
 }
 
 export default { getLaunch, getAllLaunches, getLatestLaunch, getNextLaunch, getUpcomigLaunches, getPastLaunches }

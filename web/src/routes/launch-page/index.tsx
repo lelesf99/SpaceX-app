@@ -8,7 +8,6 @@ export default function LaunchPage() {
 
   const [launch, setLaunch] = useState<any>();
   
-
   useEffect(() => {
     fetch(`https://api.spacexdata.com/v5/launches/${id}`).then((res) =>
       res.json().then((value) => {
@@ -21,10 +20,7 @@ export default function LaunchPage() {
     <div className="launch-page">
       <h1 className="launch-name">{launch?.name}</h1>
       <p>
-        {`Lançamento ${launch?.upcoming ? "ocorrerá" : "ocorreu"} ${new Date(
-          launch?.date_local
-        ).toLocaleTimeString()} 
-          ${new Date(launch?.date_local).toLocaleDateString()}`}
+        {`Lançamento ${launch?.upcoming ? "ocorrerá" : "ocorreu"} às ${new Date(launch?.date_local).toLocaleTimeString()} do dia ${new Date(launch?.date_local).toLocaleDateString()}`}
       </p>
       {launch?.upcoming ? (
         <CountDown then={launch.date_local}></CountDown>

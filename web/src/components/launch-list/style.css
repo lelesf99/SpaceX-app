@@ -29,3 +29,6 @@
 .list-card .list-item:focus{
     background-color: #D4F1F4;
 }
+.loading{
+    margin: 1rem;
+}

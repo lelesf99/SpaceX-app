@@ -6,7 +6,6 @@ const router: Express = express();
 
 router.use(express.urlencoded({ extended: false }));
 router.use(express.json());
-
 router.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'origin, X-Requested-With,Content-Type,Accept, Authorization');

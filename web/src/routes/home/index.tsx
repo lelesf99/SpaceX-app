@@ -30,11 +30,11 @@ export default function Home() {
       .then((res) => res.json())
       .then(
         (result) => {
-          setLatestLoading(true);
+          setLatestLoading(false);
           setLatest(result);
         },
         (error) => {
-          setLatestLoading(true);
+          setLatestLoading(false);
           setLatestError(error);
         }
       );
@@ -42,11 +42,11 @@ export default function Home() {
       .then((res) => res.json())
       .then(
         (result) => {
-          setNextLoading(true);
+          setNextLoading(false);
           setNext(result);
         },
         (error) => {
-          setNextLoading(true);
+          setNextLoading(false);
           setNextError(error);
         }
       );
@@ -54,11 +54,11 @@ export default function Home() {
       .then((res) => res.json())
       .then(
         (result) => {
-          setUpcomingLoading(true);
+          setUpcomingLoading(false);
           setUpcoming(result);
         },
         (error) => {
-          setUpcomingLoading(true);
+          setUpcomingLoading(false);
           setUpcomingError(error);
         }
       );
@@ -66,11 +66,11 @@ export default function Home() {
       .then((res) => res.json())
       .then(
         (result) => {
-          setPastLoading(true);
+          setPastLoading(false);
           setPast(result);
         },
         (error) => {
-          setPastLoading(true);
+          setPastLoading(false);
           setPastError(error);
         }
       );
