@@ -1,5 +1,6 @@
 # Spacex-app
 Me chamo Vinicius Leles e esse é o meu projeto para o desafio técnico da Callix.
+
 # O desafio
 
 Meu desafio era fazer um aplicativo que consumisse a API de lançamentos da SpaceX, dividi o desafio nas seguintes partes:
@@ -10,7 +11,14 @@ Meu desafio era fazer um aplicativo que consumisse a API de lançamentos da Spac
     
 -   **Integrações**: Integrar o app com o Google Analytics, com o Google Optimize (e criar um teste a/b).
     
--   **Deploy**: Configurar um nó no Heroku para o backend e criar um site estático no Netlify para o front.
+-   **Deploy**: Configurar um nó no Heroku para o backend e criar um site estático no Netlify para o front.[Cliente frontend](https://leles-spacex-app.netlify.app/) e [link da API](https://leles-spacex-app.herokuapp.com/launches). As rotas da api ficaram assim:
+	 
+	 - last: GET último lançamento
+	 - next: GET próximo lançamento
+	 - past: GET últimos lançamentos
+	 - upcoming: GET próximos lançamentos
+	 - launches: GET todos os lançamentos
+	 - launch/:id:: GET lançamento por id 
 
 # Como foi feito
 
